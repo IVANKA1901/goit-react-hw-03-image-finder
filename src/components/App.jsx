@@ -108,7 +108,7 @@ export class App extends Component {
               </p>
             </>
           )}
-          <ToastContainer autoClose={2000} theme="dark" />
+          <ToastContainer autoClose={4000} theme="dark" />
         </div>
       </Container>
     );
