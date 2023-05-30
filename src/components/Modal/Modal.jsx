@@ -4,19 +4,21 @@ import css from './Modal.module.css';
 
 export class Modal extends Component {
   componentDidMount() {
-    document.addEventListener('keydown', this.handlePressEsc);
+    window.addEventListener('keydown', this.handlePressEsc);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keypress', this.handlePressEsc);
+    window.removeEventListener('keypress', this.handlePressEsc);
   }
 
   handlePressEsc = e => {
-    if (e.code === 'Escape') this.props.onCloseModal();
+    if (e.code === 'Escape') {
+      this.props.onCloseModal();
+    }
   };
 
   handleCloseModal = e => {
-    if (e.target === e.currentTarget && e.code === 'Escape') {
+    if (e.target === e.currentTarget) {
       this.props.onCloseModal();
     }
   };
